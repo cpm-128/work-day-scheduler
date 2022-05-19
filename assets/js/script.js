@@ -36,3 +36,22 @@ var auditTime = function() {
     }
 };
 auditTime();
+
+// event listener that .textarea was clicked and turn that into a text area
+// jquery event listen will listen to all instances, not just the first
+$(".textarea").on("click" , "p" , function() {
+    var text = $(this)
+        .text()
+        .trim();
+    var textInput = $("<textarea>")
+        .val(text);
+    $(this).replaceWith(textInput);
+        textInput.trigger("focus");
+});
+// having a p element is screwing up the formatting, dk why
+// this text area also looks terrible
+
+// save task
+$(".saveBtn").on("click" , function() {
+    console.log("SAVE BTN CLICKED");
+})

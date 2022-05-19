@@ -22,7 +22,7 @@ h1 {
   font-family: var(--heading-font);
 }
 
-textarea{
+.textarea{
   background: transparent;
   border: none;
   resize: none;
@@ -53,7 +53,6 @@ textarea{
 }
 
 .time-block{
-  text-align: center;
   border-radius: 15px;
 }
 
