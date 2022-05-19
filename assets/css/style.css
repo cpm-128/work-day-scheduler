@@ -28,7 +28,6 @@ h1 {
   resize: none;
   color: var(--dark);
   border-left: 1px solid var(--dark);
-  padding: 10px;
 }
 
 .jumbotron {
@@ -93,6 +92,8 @@ h1 {
   border-bottom-right-radius: 15px;
   background-color: var(--accent);
   color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .saveBtn i:hover {
