@@ -39,6 +39,15 @@ textarea{
   border-bottom: 10px solid var(--accent);
 }
 
+#currentDay {
+  display: inline;
+  padding: 4px;
+  color: var(--primary);
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  box-shadow: 3px 3px var(--accent);
+}
+
 .description{
   white-space: pre-wrap;
 }
