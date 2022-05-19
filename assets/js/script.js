@@ -4,6 +4,8 @@ containerEl = document.querySelector(".container");
 var startHour = 9;
 // duration of workday
 var dayDuration = 8;
+// tasks need to be an array to save in storage
+tasks = [];
 
 // display current day
 var currentDay = moment().format('dddd') + ", " + moment().format('ll');
@@ -37,6 +39,7 @@ auditTime();
 
 // event listener that .textarea was clicked and turn that into a text area
 // jquery event listen will listen to all instances, not just the first
+// ?? may need work
 $(".textarea").on("click" , "p" , function() {
     var text = $(this)
         .text()
@@ -49,10 +52,30 @@ $(".textarea").on("click" , "p" , function() {
 // having a p element is screwing up the formatting, dk why
 // this text area also looks terrible
 
-// tasks need to be an array to save in storage
-tasks = [];
+// get saved tasks
+var getTasks = function() {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+
+    // if empty, create new object to track all saved tasks
+    if (!tasks) {
+        tasks = {}
+    };
+
+    // print saved tasks on page
+    // loop over object properties
+    $.each(tasks, function(list, arr) {
+        var taskP = $("<p>").textContent(arr)
+        (".textarea").append(taskP);
+    });
+};
+getTasks();
+
+
+
+
 
 // save task
+// ?? may need work
 $(".saveBtn").on("click" , function() {
     // get which time to save
     var saveIndex = $(".saveBtn").index(this) + startHour;
@@ -64,3 +87,7 @@ $(".saveBtn").on("click" , function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 );
+
+// reset page at midnight
+
+// refresh time audit every x interval of time
