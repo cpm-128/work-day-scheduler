@@ -1,5 +1,9 @@
 // elements on page
 containerEl = document.querySelector(".container");
+// start of workday
+var startHour = 9;
+// duration of workday
+var dayDuration = 8;
 
 // display current day
 var currentDay = moment().format('dddd') + ", " + moment().format('ll');
@@ -11,12 +15,6 @@ var auditTime = function() {
     // define the current hour in 24h-format, this aligns with #task-*
     var currentHour = moment().hour();
     console.log(">>> currentHour >>>", currentHour);
-
-    // start of workday
-    var startHour = 9;
-
-    // duration of workday
-    var dayDuration = 8;
 
     // if the currentHour = task-, add .present
     // dayDuration+1 to look perform the last hour
@@ -51,7 +49,18 @@ $(".textarea").on("click" , "p" , function() {
 // having a p element is screwing up the formatting, dk why
 // this text area also looks terrible
 
+// tasks need to be an array to save in storage
+tasks = [];
+
 // save task
 $(".saveBtn").on("click" , function() {
-    console.log("SAVE BTN CLICKED");
-})
+    // get which time to save
+    var saveIndex = $(".saveBtn").index(this) + startHour;
+            console.log(">>> index of save button matches time >>>" , saveIndex);
+    // get corresponding task to save
+    tasks[saveIndex] = $(this).parent().find("#task-"+saveIndex).text();
+        console.log(">>> task saved >>>" , tasks);
+    // save in localstorage
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+);
