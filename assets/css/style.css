@@ -1,5 +1,18 @@
+
+:root {
+  --primary: rgb(32,85,107);
+  --secondary: rgb(195,193,186);
+  --accent: rgb(178,199,198);
+  --accent-opaque: rgba(178,199,198,0.3);
+  --light: #FFFFFF;
+  --dark: #000000;
+  --border-radius: 4px;
+  --heading-font: "Josefin Sans", Arial, sans-serif;
+  --paragraph-font: Roboto, Arial, serif;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--paragraph-font);
   font-size: 16px;
   line-height: 1;
 }
@@ -8,17 +21,17 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: var(--dark);
+  border-left: 1px solid var(--dark);
   padding: 10px;
 }
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: var(--primary);
+  color: var(--light);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid var(--accent);
 }
 
 .description{
