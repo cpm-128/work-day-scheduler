@@ -7,7 +7,8 @@
   --light: #FFFFFF;
   --dark: #000000;
   --border-radius: 4px;
-  --heading-font: "Josefin Sans", Arial, sans-serif;
+  --heading-font: "Josefin Sans semi-bold", Arial, sans-serif;
+  --subheading-font: "Josefin Sans", Arial, sans-serif;
   --paragraph-font: Roboto, Arial, serif;
 }
 
@@ -15,6 +16,10 @@ body {
   font-family: var(--paragraph-font);
   font-size: 16px;
   line-height: 1;
+}
+
+h1 {
+  font-family: var(--heading-font);
 }
 
 textarea{
