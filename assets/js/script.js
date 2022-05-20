@@ -26,9 +26,9 @@ var auditTime = function() {
 
         // if currentHour is greater, it's late
         // notice jQuery selector with a the variable
-            if(currentHour-8 > i) {
+            if(currentHour > i) {
                 $(taskArea).addClass("past");
-            } else if (currentHour-8 === i) {
+            } else if (currentHour === i) {
                 $(taskArea).addClass("present");
             } else {
                 $(taskArea).addClass("future");
