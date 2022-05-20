@@ -1,11 +1,10 @@
 // elements on page
 containerEl = document.querySelector(".container");
+saveBtnEl = document.querySelector(".saveBtn");
 // start of workday
 var startHour = 9;
 // duration of workday
 var dayDuration = 8;
-// tasks need to be an array to save in storage
-tasks = [];
 
 // display current day
 var currentDay = moment().format('dddd') + ", " + moment().format('ll');
@@ -39,58 +38,57 @@ auditTime();
 
 // event listener that .textarea was clicked and turn that into a text area
 // jquery event listen will listen to all instances, not just the first
-// ?? may need work
-// bootstrap tags will mirror the styling
-$(".row").on("click" , "textarea" , function() {
+// ?? is this event needed?
+$(".row").on("click" , "input" , function() {
     var text = $(this).text().trim();
-    var textInput = $("<input>").val(text);
+    var textInput = $("input").val(text);
     $(this).replaceWith(textInput);
-    console.log (">>> TEXT AREA WAS CLICKED" , text);
-
 });
-// having a p element is screwing up the formatting, dk why
-// this text area also looks terrible
+
+// save task with key and value
+$(".saveBtn").on("click" , function () {
+    var am9 = document.getElementById("task-9").value;
+        localStorage.setItem("task9", am9);
+    var am10 = document.getElementById("task-10").value;
+        localStorage.setItem("task10", am10);
+    var am11 = document.getElementById("task-11").value;
+        localStorage.setItem("task11", am11);
+    var pm12 = document.getElementById("task-12").value;
+        localStorage.setItem("task12", pm12);
+    var pm1 = document.getElementById("task-13").value;
+        localStorage.setItem("task13", pm1);
+    var pm2 = document.getElementById("task-14").value;
+        localStorage.setItem('task14', pm2);
+    var pm3 = document.getElementById("task-15").value;
+        localStorage.setItem("task15", pm3);
+    var pm4 = document.getElementById("task-16").value;
+        localStorage.setItem('task16', pm4);
+});
+
+
+// // get saved tasks
+// var getTasks = function() {
+//     tasks = JSON.parse(localStorage.getItem("tasks"));
+
+//     // if empty, create new object to track all saved tasks
+//     if (!tasks) {
+//         tasks = {}
+//     };
+
+//     // print saved tasks on page
+//     // loop over object properties
+//     $.each(tasks, function(list, arr) {
+//         var taskP = $("<p>").textContent(arr)
+//         (".textarea").append(taskP);
+//     });
+// };
+// getTasks();
 
 
 
 
 
 
-// get saved tasks
-var getTasks = function() {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-
-    // if empty, create new object to track all saved tasks
-    if (!tasks) {
-        tasks = {}
-    };
-
-    // print saved tasks on page
-    // loop over object properties
-    $.each(tasks, function(list, arr) {
-        var taskP = $("<p>").textContent(arr)
-        (".textarea").append(taskP);
-    });
-};
-getTasks();
-
-
-
-
-
-// save task
-// ?? may need work
-$(".saveBtn").on("click" , function() {
-    // get which time to save
-    var saveIndex = $(".saveBtn").index(this) + startHour;
-            console.log(">>> index of save button matches time >>>" , saveIndex);
-    // get corresponding task to save
-    tasks[saveIndex] = $(this).parent().find("#task-"+saveIndex).text();
-        console.log(">>> task saved >>>" , tasks);
-    // save in localstorage
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
-);
 
 // reset page at midnight
 
