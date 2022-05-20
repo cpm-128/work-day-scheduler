@@ -35,3 +35,4 @@ Repo url:
 https://github.com/cpm-128/work-day-scheduler
 
 Screenshots:
+<img src = "./assets/images/work-day-scheduler_screenshot.png">

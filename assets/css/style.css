@@ -73,17 +73,17 @@ h1 {
 
 .past {
   background-color: var(--secondary);
-  color: white;
+  color: var(--light);
 }
 
 .present {
   background-color: var(--primary);
-  color: white;
+  color: var(--light);
 }
 
 .future {
   background-color: var(--light);
-  color: white;
+  color: var(--dark);
 }
 
 .saveBtn {
