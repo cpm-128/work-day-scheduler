@@ -66,23 +66,27 @@ $(".saveBtn").on("click" , function () {
 });
 
 
-// // get saved tasks
-// var getTasks = function() {
-//     tasks = JSON.parse(localStorage.getItem("tasks"));
+// get saved tasks
+var getTasks = function() {
+    var savedAm9 = localStorage.getItem("task9");
+        document.getElementById("task-9").value = savedAm9;
+    var savedAm10 = localStorage.getItem("task10");
+        document.getElementById("task-10").value = savedAm10;
+    var savedAm11 = localStorage.getItem("task11");
+        document.getElementById("task-11").value = savedAm11;
+    var savedPm12 = localStorage.getItem("task12");
+        document.getElementById("task-12").value = savedPm12;
+    var savedPm1 = localStorage.getItem("task13");
+        document.getElementById("task-13").value = savedPm1;
+    var savedPm2 = localStorage.getItem("task14");
+        document.getElementById("task-14").value = savedPm2;
+    var savedPm3 = localStorage.getItem("task15");
+        document.getElementById("task-15").value = savedPm3;
+    var savedPm4 = localStorage.getItem("task16");
+        document.getElementById("task-16").value = savedPm4;
+};
+getTasks();
 
-//     // if empty, create new object to track all saved tasks
-//     if (!tasks) {
-//         tasks = {}
-//     };
-
-//     // print saved tasks on page
-//     // loop over object properties
-//     $.each(tasks, function(list, arr) {
-//         var taskP = $("<p>").textContent(arr)
-//         (".textarea").append(taskP);
-//     });
-// };
-// getTasks();
 
 
 
