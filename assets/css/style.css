@@ -61,8 +61,8 @@ h1 {
   border-top: 1px solid var(--dark);
 }
 
-#row-last {
-  border-bottom: 1px solid var(--dark);
+.form-control {
+  border: 1px solid var(--dark);
 }
 
 .hour {

@@ -1,6 +1,7 @@
 // elements on page
 containerEl = document.querySelector(".container");
 saveBtnEl = document.querySelector(".saveBtn");
+formControlEl = document.querySelector(".form-control");
 // start of workday
 var startHour = 9;
 // duration of workday
@@ -35,15 +36,6 @@ var auditTime = function() {
     }
 };
 auditTime();
-
-// event listener that .textarea was clicked and turn that into a text area
-// jquery event listen will listen to all instances, not just the first
-// ?? is this event needed?
-$(".row").on("click" , "input" , function() {
-    var text = $(this).text().trim();
-    var textInput = $("input").val(text);
-    $(this).replaceWith(textInput);
-});
 
 // save task with key and value
 $(".saveBtn").on("click" , function () {
@@ -87,13 +79,7 @@ var getTasks = function() {
 };
 getTasks();
 
-
-
-
-
-
-
-
+// FUTURE FUNCTIONS
 // reset page at midnight
 
 // refresh time audit every x interval of time
